@@ -10,7 +10,7 @@ To solve small mathematical number puzzles. The number puzzle can be described a
 
 An Example puzzle              The Puzzle solved  
 
-|    | 14 | 10 | 35 |           |    | 14 | 10 | 35 |
+| 0  | 14 | 10 | 35 |           | 0  | 14 | 10 | 35 |
 |----|----|----|----|           |----|----|----|----|                   
 | 14 |    |    |    |           | 14 | 7  | 2  | 1  |
 | 15 |    |    |    |           | 15 | 3  | 7  | 5  |
