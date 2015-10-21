@@ -10,10 +10,11 @@ To solve small mathematical number puzzles. The number puzzle can be described a
 
 An Example puzzle              The Puzzle solved  
 
-    14 | 10 | 35                  | 14 |10 | 35
-14 |   |    |                  14 | 7  | 2 | 1
-15 |   |    |                  15 | 3  | 7 | 5
-28 |   |    |                  28 | 4  | 1 | 7
+|    | 14 | 10 | 35 |           |    | 14 | 10 | 35 |
+|----|----|----|----|           |----|----|----|----|                   
+| 14 |    |    |    |           | 14 | 7  | 2  | 1  |
+| 15 |    |    |    |           | 15 | 3  | 7  | 5  |
+| 28 |    |    |    |           | 28 | 4  | 1  | 7  |
 
 Note: the row and column headings are given and do not have any constraints.
 
