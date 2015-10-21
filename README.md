@@ -8,13 +8,21 @@ To solve small mathematical number puzzles. The number puzzle can be described a
 	-all squares on the diagonal line form the upper left to lower right contain the same values
 	-The heading of each row and column hold either the sum or the product of all the digits in that row or column
 
-An Example puzzle              The Puzzle solved  
+An Example puzzle               
 
-| 0  | 14 | 10 | 35 |           | 0  | 14 | 10 | 35 |
-|----|----|----|----|           |----|----|----|----|                   
-| 14 |    |    |    |           | 14 | 7  | 2  | 1  |
-| 15 |    |    |    |           | 15 | 3  | 7  | 5  |
-| 28 |    |    |    |           | 28 | 4  | 1  | 7  |
+| 0  | 14 | 10 | 35 |          
+|----|----|----|----|                             
+| 14 |    |    |    |          
+| 15 |    |    |    |           
+| 28 |    |    |    |      
+
+The Puzzle solved 
+
+| 0  | 14 | 10 | 35 |          
+|----|----|----|----|                             
+| 14 |  7 | 2  | 1  |          
+| 15 |  3 | 7  | 5  |           
+| 28 |  4 | 1  | 7  | 
 
 Note: the row and column headings are given and do not have any constraints.
 
