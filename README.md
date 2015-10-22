@@ -1,6 +1,6 @@
 # Prolog Assignment
 Assignment written for Declaritive Programming COMP90048 @ University Of Melbourne
-By Nathan Malishev 637410
+By Nathan Malishev
 
 Spec:
 To solve small mathematical number puzzles. The number puzzle can be described as a grid of squares, each to be filled with a single digit 1-9 satisfying the following constraints:
