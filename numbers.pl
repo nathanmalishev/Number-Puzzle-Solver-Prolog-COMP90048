@@ -19,9 +19,16 @@
 
 %% The program was to be able 2x2,3x3,4x4 puzzles.
 
-%% My appraoch 
+%% My appraoch, was to check each condition make sure they were valid & then label each Row.
+%% This worked well as i put domain limits initially in functions like sum_list & product_list
+%% So backtracking was not costly and my solution was extremely effiecent.
+%% Possible improvements, would be to make all the valid checking functions just take in the puzzle
+%% My current solutions, each valid checking constraint requires a different argument
+%% Things to note if the constraints for Rows & columns change so will my solution, as
+%% vaild_columns just transposes the puzzle then applies valid_rows. 
 
 :- ensure_loaded(library(clpfd)).
+
 
 %Puzzle_solution 
 % @arg - [[row1],[row2]..[rowN]]
@@ -34,6 +41,7 @@ puzzle_solution([HeadPuzzle | TailPuzzle]):-
     %map label accross every row & assign variables
     maplist(label,[HeadPuzzle|TailPuzzle]).
 
+
 %validDiagonal
 % @arg1 - Tail of the puzzle, first row doesn't have a diagonal that counts!
 % @arg2 - N the index of diagonal in a given array (Start with N=1)
@@ -45,6 +53,7 @@ validDiagonal( [Head|TailPuzzle] , N, Diagonal):-
     N0 #= N+1,
     validDiagonal(TailPuzzle, N0, Diagonal).
 
+
 %getElemByIndex
 % @arg1 - Row array
 % @arg2 - The index of the item we want
@@ -53,6 +62,7 @@ getElemByIndex( [H|_],0,H). % if we get to zero we have found our Elem
 getElemByIndex( [Head|Tail], Count0 ,Elem):-
     Count #= Count0-1,
     getElemByIndex( Tail, Count,Elem).
+
 
 %validColumns
 % @arg1 - takes in whole puzzle
@@ -63,6 +73,7 @@ validColumns([Head | Tail]):-
     %take the tail of the transposal & now treat as rowss
     validRows(TransposedPuzzle).
 
+
 %validRows
 % @arg1 - Tail of puzzle (as row1 headers don't follow constraints)
 validRows([]).
@@ -71,15 +82,18 @@ validRows([List|Tail]):-
     all_distinctExH(List),
     validRows(Tail).
 
+
 %all_distinctExH - checks if tail is distinct (Header does not follow constraints)
 all_distinctExH([Head|Tail]):-
     all_distinct(Tail).
+
 
 %validRow - checks if the row follows the contraints 
 % arg1 - row
 validRow([Elem|Tail]):-
     sumList(Tail,Elem);
     productList(Tail,Elem).
+
 
 %sumList - sums a list and only lets our domain be between 1-9 as listed in constraintss
 sumList([],0).
@@ -88,6 +102,7 @@ sumList([H|T],Sum):-
     H #< 10,
     H #> 0,
     Sum #= H+Rest.
+
 
 %productList - takes the product of a list and only lets our domain be between 1-9 as in constraints
 productList([],1).
