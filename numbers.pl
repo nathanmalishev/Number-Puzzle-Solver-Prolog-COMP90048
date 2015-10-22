@@ -26,6 +26,7 @@
 %% My current solutions, each valid checking constraint requires a different argument
 %% Things to note if the constraints for Rows & columns change so will my solution, as
 %% vaild_columns just transposes the puzzle then applies valid_rows. 
+%% could also move the checking of distinct numbers from validRows to validRow. (more logicals)
 
 :- ensure_loaded(library(clpfd)).
 
@@ -59,19 +60,17 @@ validDiagonal( [Head|TailPuzzle] , N, Diagonal):-
 % @arg2 - The index of the item we want
 % @arg3 - The Elem itselfs
 getElemByIndex( [H|_],0,H). % if we get to zero we have found our Elem
-getElemByIndex( [Head|Tail], Count0 ,Elem):-
+getElemByIndex( [_|Tail], Count0 ,Elem):-
     Count #= Count0-1,
     getElemByIndex( Tail, Count,Elem).
 
 
-%validColumns
+%validColumns - takes in puzzle transposes it then hands it off to be checked by validRows
 % @arg1 - takes in whole puzzle
-validColumns([]).
+validColumns([]). 
 validColumns([Head | Tail]):-
-    % transpose the columns into rows
-    transpose([Head|Tail],[_|TransposedPuzzle]),
-    %take the tail of the transposal & now treat as rowss
-    validRows(TransposedPuzzle).
+    transpose([Head|Tail],[_|TransposedPuzzleTail]),
+    validRows(TransposedPuzzleTail).
 
 
 %validRows
@@ -84,11 +83,11 @@ validRows([List|Tail]):-
 
 
 %all_distinctExH - checks if tail is distinct (Header does not follow constraints)
-all_distinctExH([Head|Tail]):-
+all_distinctExH([_|Tail]):-
     all_distinct(Tail).
 
 
-%validRow - checks if the row follows the contraints 
+%validRow - checks if the row follows the contraints (sum or product)
 % arg1 - row
 validRow([Elem|Tail]):-
     sumList(Tail,Elem);
