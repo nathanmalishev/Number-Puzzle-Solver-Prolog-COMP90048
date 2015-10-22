@@ -26,7 +26,7 @@
 %% My current solutions, each valid checking constraint requires a different argument
 %% Things to note if the constraints for Rows & columns change so will my solution, as
 %% vaild_columns just transposes the puzzle then applies valid_rows. 
-%% could also move the checking of distinct numbers from validRows to validRow. (more logicals)
+%% could also move the checking of distinct numbers from validRows to validRow. (more logical)
 
 :- ensure_loaded(library(clpfd)).
 
