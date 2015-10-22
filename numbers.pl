@@ -19,7 +19,7 @@
 
 %% The program was to be able 2x2,3x3,4x4 puzzles.
 
-%% My appraoch
+%% My appraoch 
 
 :- ensure_loaded(library(clpfd)).
 
