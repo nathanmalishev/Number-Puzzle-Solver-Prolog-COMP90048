@@ -19,6 +19,8 @@
 
 %% The program was to be able 2x2,3x3,4x4 puzzles.
 
+%% My appraoch
+
 :- ensure_loaded(library(clpfd)).
 
 %Puzzle_solution 
@@ -94,6 +96,3 @@ productList([H|T],Sum):-
     H #< 10,
     H #> 0,
     Sum #= H*Rest.
-
-
-     
