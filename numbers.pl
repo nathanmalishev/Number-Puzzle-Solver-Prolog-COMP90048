@@ -1,5 +1,5 @@
 %% COMP30022 Declaritive Programming
-%% Nathan Malishev - 637 410
+%% Nathan Malishev
 
 %% To solve small mathematical number puzzles. The number puzzle can be described as a grid of 
 %%squares, each to be filled with a single digit 1-9 satisfying the following constraints:
