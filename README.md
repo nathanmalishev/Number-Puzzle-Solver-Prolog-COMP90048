@@ -4,9 +4,11 @@ By Nathan Malishev
 
 Spec:
 To solve small mathematical number puzzles. The number puzzle can be described as a grid of squares, each to be filled with a single digit 1-9 satisfying the following constraints:
-	-Each row & each column have no repeated digits
-	-all squares on the diagonal line form the upper left to lower right contain the same values
-	-The heading of each row and column hold either the sum or the product of all the digits in that row or column
+<ol>
+	<li>-Each row & each column have no repeated digits</li>
+	<li>-all squares on the diagonal line form the upper left to lower right contain the same values</li>
+	<li>-The heading of each row and column hold either the sum or the product of all the digits in that row or column</li>
+	</ol>
 
 An Example puzzle               
 
