@@ -32,14 +32,12 @@
 
 
 %Puzzle_solution 
-% @arg - [[row1],[row2]..[rowN]]
 % Takes in an array of N row arrays
 %for eg the example puzzle [[0,14,10,35],[14,_,_,_],[15,_,_,_],[28,_,_,_]]
 puzzle_solution([HeadPuzzle | TailPuzzle]):-
     validDiagonal(TailPuzzle,1,_),
     validRows(TailPuzzle),
     validColumns([HeadPuzzle | TailPuzzle]),
-    %map label accross every row & assign variables
     maplist(label,[HeadPuzzle|TailPuzzle]).
 
 
@@ -49,7 +47,6 @@ puzzle_solution([HeadPuzzle | TailPuzzle]):-
 % @arg3 - The diagonal value
 validDiagonal([], _,_).
 validDiagonal( [Head|TailPuzzle] , N, Diagonal):-
-    %retieve what the diagonal value should be & see if it holds
     getElemByIndex( Head , N , Diagonal),
     N0 #= N+1,
     validDiagonal(TailPuzzle, N0, Diagonal).
@@ -66,7 +63,6 @@ getElemByIndex( [_|Tail], Count0 ,Elem):-
 
 
 %validColumns - takes in puzzle transposes it then hands it off to be checked by validRows
-% @arg1 - takes in whole puzzle
 validColumns([]). 
 validColumns([Head | Tail]):-
     transpose([Head|Tail],[_|TransposedPuzzleTail]),
